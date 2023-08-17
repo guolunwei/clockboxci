@@ -16,14 +16,13 @@ jobs:
         name: Login to ACR
         uses: aliyun/acr-login@v1
         with:
-          login-server: https://registry.cn-guanzhou.aliyuncs.com
+          login-server: https://registry.cn-hangzhou.aliyuncs.com
           username: "${{ secrets.ACR_USERNAME }}"
           password: "${{ secrets.ACR_PASSWORD }}"
-          region-id: cn-guanzhou
       - 
         name: Build and push image
         env:
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t registry.cn-guanzhou.aliyuncs.com/lunwei/clockbox:$IMAGE_TAG .
-          docker push registry.cn-guanzhou.aliyuncs.com/lunwei/clockbox:$IMAGE_TAG
+          docker build -t registry.cn-hangzhou.aliyuncs.com/lunwei/clockbox:$IMAGE_TAG .
+          docker push registry.cn-hangzhou.aliyuncs.com/lunwei/clockbox:$IMAGE_TAG
