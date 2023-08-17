@@ -19,6 +19,7 @@ jobs:
           login-server: https://registry.cn-guanzhou.aliyuncs.com
           username: "${{ secrets.ACR_USERNAME }}"
           password: "${{ secrets.ACR_PASSWORD }}"
+          region-id: cn-guanzhou
       - 
         name: Build and push image
         env:
